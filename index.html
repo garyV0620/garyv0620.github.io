@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/4f3ce16e3e.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+        @import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+        @import url("https://fonts.googleapis.com/css?family=Raleway:900&display=swap");
+
+        * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        }
+
+        body {
+            background-image: url("love.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: end;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        body > div{
+            flex: 1 1 auto;
+        }
+        .footer {
+            height: 10vh; 
+            min-width: 100%;
+            display: flex;
+            align-items: center;
+        }
+        .waviy {
+            position: relative;
+            -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0,0,0,.2));
+            font-size: clamp(1rem, 10vw, 2rem); 
+            text-wrap: balance;
+            text-align: center;
+            flex: 1 1 auto;
+            text-shadow: 2px 2px #ff00009d;
+        }
+        .waviy span {
+            font-family: 'Alfa Slab One', cursive;
+            position: relative;
+            display: inline-block;
+            color: #f1cbcb;
+            text-transform: uppercase;
+            animation: waviy 1s infinite;
+            animation-delay: calc(.1s * var(--i));
+            text-wrap: balance;
+            text-align: center;
+        }
+        .waviy span:last-child {
+            color: rgb(253, 252, 252);
+        }
+        @keyframes waviy {
+        0%,40%,100% {
+            transform: translateY(0)
+        }
+        20% {
+            transform: translateY(-20px)
+        }
+        }
+
+    .title-word {
+        animation: color-animation 1s linear infinite;
+        text-shadow: 2px 2px #9db0c5cb;
+    }
+
+    .title-word-1 {
+    --color-1: #df55555d;
+    --color-2: #3D8DAE;
+    --color-3: #E4A9A8;
+    }
+
+    .title-word-2 {
+    --color-1: #DBAD4A;
+    --color-2: red;
+    --color-3: #17494D;
+    }
+
+    .title-word-3 {
+    --color-1: #a12626;
+    --color-2: #E4A9A8;
+    --color-3: #ACCFCB;
+    }
+
+    .title-word-4 {
+    --color-1: #3D8DAE;
+    --color-2: #DF8453;
+    --color-3: #e48c8a;
+    }
+
+    @keyframes color-animation {
+    0%    {color: var(--color-1)}
+    32%   {color: var(--color-1)}
+    33%   {color: var(--color-2)}
+    65%   {color: var(--color-2)}
+    66%   {color: var(--color-3)}
+    99%   {color: var(--color-3)}
+    100%  {color: var(--color-1)}
+    }
+
+    /* Here are just some visual styles. 🖌 */
+
+    .container {
+        display: grid;
+        text-align: center;
+        margin-top: 2rem;
+        flex: 1 1 1rem;
+    }
+
+    .title {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 800;
+        font-size: clamp(2rem, 10vw, 3rem); 
+        text-transform: uppercase;
+        z-index: 99;
+    }
+
+    .message{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: space-evenly;
+        align-items: center;
+        text-align: center;
+        padding: 0 1rem;
+    }
+
+    .message > h4 {
+        padding: 1rem 1rem; 
+        backdrop-filter: blur(3px);
+        background: rgba(0, 0, 0, 0);
+        box-shadow: 5px 5px 5px 2px black;
+        border-radius: 20px;
+        font-family: "Montserrat Medium";
+        max-width: 40ch;
+        text-align: center;
+        transform: scale(0.94);
+        animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+        color: #ffffff;
+        line-height: 2rem;
+        text-shadow: 2px 2px #940707;
+        z-index: 99;
+    }
+    @keyframes scale {
+    100% {
+        transform: scale(1);
+    }
+    }
+
+    .message > h4 span {
+    display: inline-block;
+    opacity: 0;
+    filter: blur(4px);
+    }
+
+    .message > h4 span:nth-child(1) {
+    animation: fade-in 0.8s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+    }
+
+    .message > h4 span:nth-child(2) {
+    animation: fade-in 0.8s 0.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
+    }
+
+    .message > h4 span:nth-child(3) {
+    animation: fade-in 0.8s 0.5s forwards cubic-bezier(0.11, 0, 0.5, 0);
+    }
+
+    .message > h4 span:nth-child(4) {
+    animation: fade-in 0.8s 0.7s forwards cubic-bezier(0.11, 0, 0.5, 0);
+    }
+
+    .message > h4 span:nth-child(5) {
+    animation: fade-in 0.8s 0.9s forwards cubic-bezier(0.11, 0, 0.5, 0);
+    }
+
+    .message > h4 span:nth-child(6) {
+    animation: fade-in 0.8s 1.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+    }
+
+    .message > h4 span:nth-child(7) {
+    animation: fade-in 0.8s 1.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
+    }
+
+    .message > h4 span:nth-child(8) {
+    animation: fade-in 0.8s 1.5s forwards cubic-bezier(0.11, 0, 0.5, 0);
+    }
+
+    .message > h4 span:nth-child(9) {
+    animation: fade-in 0.8s 1.7s forwards cubic-bezier(0.11, 0, 0.5, 0);
+    }
+
+    .message > h4 span:nth-child(10) {
+    animation: fade-in 0.8s 1.9s forwards cubic-bezier(0.11, 0, 0.5, 0);
+    }
+
+    .message > h4 span:nth-child(11) {
+    animation: fade-in 0.8s 2.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+    }
+
+    .message > h4 span:nth-child(12) {
+    animation: fade-in 0.8s 2.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
+    }
+
+    .message > h4 span:nth-child(13) {
+    animation: fade-in 0.8s 2.5s forwards cubic-bezier(0.11, 0, 0.5, 0);
+    }
+
+    .message > h4 span:nth-child(14) {
+    animation: fade-in 0.8s 2.7s forwards cubic-bezier(0.11, 0, 0.5, 0);
+    }
+
+    .message > h4 span:nth-child(15) {
+    animation: fade-in 0.8s 2.9s forwards cubic-bezier(0.11, 0, 0.5, 0);
+    }
+
+    .message > h4 span:nth-child(16) {
+    animation: fade-in 0.8s 3.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+    }
+
+    .message > h4 span:nth-child(17) {
+    animation: fade-in 0.8s 3.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
+    }
+
+    .message > h4 span:nth-child(18) {
+    animation: fade-in 0.8s 3.5s forwards cubic-bezier(0.11, 0, 0.5, 0);
+    }
+
+    .message > h4 span:nth-child(19) {
+    animation: fade-in 0.8s 3.7s forwards cubic-bezier(0.11, 0, 0.5, 0);
+    }
+
+    .message > h4 span:nth-child(20) {
+    animation: fade-in 0.8s 3.9s forwards cubic-bezier(0.11, 0, 0.5, 0);
+    }
+
+    .message > h4 span:nth-child(21) {
+    animation: fade-in 0.8s 4.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+    }
+
+    .message > h4 span:nth-child(22) {
+    animation: fade-in 0.8s 4.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
+    }
+
+    .message > h4 span:nth-child(23) {
+    animation: fade-in 0.8s 4.5s forwards cubic-bezier(0.11, 0, 0.5, 0);
+    }
+
+    .message > h4 span:nth-child(24) {
+    animation: fade-in 0.8s 4.7s forwards cubic-bezier(0.11, 0, 0.5, 0);
+    }
+
+    .message > h4 span:nth-child(25) {
+    animation: fade-in 0.8s 4.9s forwards cubic-bezier(0.11, 0, 0.5, 0);
+    }
+
+    .message > h4 span:nth-child(26) {
+    animation: fade-in 0.8s 5.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+    }
+
+    .message > h4 span:nth-child(27) {
+    animation: fade-in 0.8s 5.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
+    }
+
+    .message > h4 span:nth-child(28) {
+    animation: fade-in 0.8s 5.5s forwards cubic-bezier(0.11, 0, 0.5, 0);
+    }
+
+    .message > h4 span:nth-child(29) {
+    animation: fade-in 0.8s 5.7s forwards cubic-bezier(0.11, 0, 0.5, 0);
+    }
+ 
+    .message > h4 span:nth-child(30) {
+    animation: fade-in 0.8s 5.9s forwards cubic-bezier(0.11, 0, 0.5, 0);
+    }
+
+    .message > h4 span:nth-child(31) {
+    animation: fade-in 0.8s 6.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+    }
+
+    .message > h4 span:nth-child(32) {
+    animation: fade-in 0.8s 6.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
+    }
+
+    .message > h4 span:nth-child(33) {
+    animation: fade-in 0.8s 6.5s forwards cubic-bezier(0.11, 0, 0.5, 0);
+    }
+
+    .message > h4 span:nth-child(34) {
+    animation: fade-in 0.8s 6.7s forwards cubic-bezier(0.11, 0, 0.5, 0);
+    }
+
+    .message > h4 span:nth-child(35) {
+    animation: fade-in 0.8s 6.9s forwards cubic-bezier(0.11, 0, 0.5, 0);
+    }
+
+    .message > h4 span:nth-child(36) {
+    animation: fade-in 0.8s 7.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+    }
+
+    .message > h4 span:nth-child(37) {
+    animation: fade-in 0.8s 7.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
+    }
+
+
+    .message > h4 span:nth-child(38) {
+    animation: fade-in 0.8s 7.5s forwards cubic-bezier(0.11, 0, 0.5, 0);
+    }
+
+    @keyframes fade-in {
+        100% {
+            opacity: 1;
+            filter: blur(0);
+        }
+    }
+
+    .m1 {
+        position: relative;
+        margin: 0px;
+        width: 100%;
+        
+    }
+
+    #container {
+        position: absolute;
+        margin: auto;
+        width: 100%;
+        height: 50pt;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        filter: url(#threshold) blur(0.6px);
+    }
+
+    #text1,
+    #text2 {
+        position: absolute;
+        width: 100%;
+        display: inline-block;
+        left: 0px;
+        font-family: "Raleway", sans-serif;
+        font-size: 25pt;
+        text-align: center;
+        user-select: none;
+        color: rgb(226, 221, 221);
+        text-shadow: 3px 4px #2c1a1a;
+    }
+    
+    .fa-heart {
+    color: rgb(240, 87, 87);
+    font-size: 1rem;
+    position: absolute;
+    animation:  heartMove linear 1;
+    top: -10vh;
+    z-index: 0;
+}
+
+@keyframes heartMove {
+    0%{
+        transform: translateY(-10vh) ;
+    }
+    100%{
+        transform: translateY(100vh) ;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="title">
+          <span class="title-word title-word-1">HAPPY</span>
+          <span class="title-word title-word-2">19<sup>th</sup></span>
+          <span class="title-word title-word-3">MONTH</span><span class="title-word title-word-3">SARY</span>
+          <span class="title-word title-word-4">LOVE</span>
+        </h2>
+    </div>
+    <div class="message">
+        <h4> 
+            <span>Hi</span>
+            <span>Love!</span>
+            <br>
+            <span>Happy</span>
+            <span>Monthsary <3</span>
+            <br>
+            <span>Hinde</span>
+            <span>talaga</span>
+            <span>ako</span>
+            <span>marunong</span>
+            <span>gumawa</span>
+            <span>ng</span>
+            <span>love</span>
+            <span>letter</span>
+            <span>mahal</span>
+            <span>kaya </span>
+            <span>eto</span>
+            <span>nalang</span>
+            <span>muna hahah.</span>
+            <span>Mahal na mahal</span>
+            <span>kita</span>
+            <span>palagi</span>
+            <span>po,</span>
+            <span>mag</span>
+            <span>mahalan</span>
+            <span>lang</span>
+            <span>tayo</span>
+            <span>palagi.</span>
+            <span>More</span>
+            <span>monthsary</span>
+            <span>to</span>
+            <span>come.</span>
+            <span>Let's </span>
+            <span>celebrate</span>
+            <span>it poreber <3</span>
+            <span>Mag</span>
+            <span>iingat</span>
+            <span>palagi ha</span>
+            <span>Lablab</span>
+            <span><3</span>
+        </h4>
+        <div class="m1">
+            <div id="container">
+                <span id="text1"></span>
+                <span id="text2"></span>
+            </div>
+            
+            <svg id="filters">
+                <defs>
+                    <filter id="threshold">
+                        <feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0
+                              0 1 0 0 0
+                              0 0 1 0 0
+                              0 0 0 255 -140" />
+                    </filter>
+                </defs>
+            </svg>
+        </div>
+       
+    </div>
+    <div class="footer">
+        <div class="waviy">
+            <span style="--i:1">I</span>
+            &nbsp;
+            <span style="--i:2">L</span>
+            <span style="--i:3">O</span>
+            <span style="--i:4">V</span>
+            <span style="--i:5">E</span>
+            &nbsp;
+            <span style="--i:6">Y</span>
+            <span style="--i:7">O</span>
+            <span style="--i:8">U</span>
+            &nbsp;
+            <span style="--i:9" >
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-emoji-kiss" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M12.493 13.368a7 7 0 1 1 2.489-4.858c.344.033.68.147.975.328a8 8 0 1 0-2.654 5.152 8.58 8.58 0 0 1-.81-.622Zm-3.731-3.22a13 13 0 0 0-1.107.318.5.5 0 1 1-.31-.95c.38-.125.802-.254 1.192-.343.37-.086.78-.153 1.103-.108.16.022.394.085.561.286.188.226.187.497.131.705a1.892 1.892 0 0 1-.31.593c-.077.107-.168.22-.275.343.107.124.199.24.276.347.142.197.256.397.31.595.055.208.056.479-.132.706-.168.2-.404.262-.563.284-.323.043-.733-.027-1.102-.113a14.87 14.87 0 0 1-1.191-.345.5.5 0 1 1 .31-.95c.371.12.761.24 1.109.321.176.041.325.069.446.084a5.609 5.609 0 0 0-.502-.584.5.5 0 0 1 .002-.695 5.52 5.52 0 0 0 .5-.577 4.465 4.465 0 0 0-.448.082Zm.766-.087-.003-.001-.003-.001c.004 0 .006.002.006.002Zm.002 1.867-.006.001a.038.038 0 0 1 .006-.002ZM6 8c.552 0 1-.672 1-1.5S6.552 5 6 5s-1 .672-1 1.5S5.448 8 6 8m2.757-.563a.5.5 0 0 0 .68-.194.934.934 0 0 1 .813-.493c.339 0 .645.19.813.493a.5.5 0 0 0 .874-.486A1.934 1.934 0 0 0 10.25 5.75c-.73 0-1.356.412-1.687 1.007a.5.5 0 0 0 .194.68ZM14 9.828c1.11-1.14 3.884.856 0 3.422-3.884-2.566-1.11-4.562 0-3.421Z"/>
+                  </svg>
+            </span>
+            <br>
+            <span style="--i:8">Marjorie Leal</span>
+        </div>
+    </div>
+   
+</body>
+<script>
+    const elts = {
+    text1: document.getElementById("text1"),
+    text2: document.getElementById("text2")
+};
+
+const texts = [
+    "Always", 
+    "Remember",
+    "I LOVE YOU SO MUCH",
+    "Andito lang ako",
+    "palagi sa tabi mo",
+    "Hinde kita iiwan", 
+    "Mahal kita palagi", 
+    ":)"
+];
+
+const morphTime = 1.5;
+const cooldownTime = 0.25;
+
+let textIndex = texts.length - 1;
+let time = new Date();
+let morph = 0;
+let cooldown = cooldownTime;
+
+elts.text1.textContent = texts[textIndex % texts.length];
+elts.text2.textContent = texts[(textIndex + 1) % texts.length];
+
+function doMorph() {
+    morph -= cooldown;
+    cooldown = 0;
+
+    let fraction = morph / morphTime;
+
+    if (fraction > 1) {
+        cooldown = cooldownTime;
+        fraction = 1;
+    }
+
+    setMorph(fraction);
+}
+
+function setMorph(fraction) {
+    elts.text2.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
+    elts.text2.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
+
+    fraction = 1 - fraction;
+    elts.text1.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
+    elts.text1.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
+
+    elts.text1.textContent = texts[textIndex % texts.length];
+    elts.text2.textContent = texts[(textIndex + 1) % texts.length];
+}
+
+function doCooldown() {
+    morph = 0;
+
+    elts.text2.style.filter = "";
+    elts.text2.style.opacity = "100%";
+
+    elts.text1.style.filter = "";
+    elts.text1.style.opacity = "0%";
+}
+
+function animate() {
+    requestAnimationFrame(animate);
+
+    let newTime = new Date();
+    let shouldIncrementIndex = cooldown > 0;
+    let dt = (newTime - time) / 1000;
+    time = newTime;
+
+    cooldown -= dt;
+
+    if (cooldown <= 0) {
+        if (shouldIncrementIndex) {
+            textIndex++;
+        }
+
+        doMorph();
+    } else {
+        doCooldown(); 
+    }
+}
+
+animate();
+</script>
+
+<script type="text/babel">
+   const body = document.querySelector("body");
+
+    function createHeart() {
+        const heart = document.createElement("div");
+        heart.className = "fas fa-heart";
+        heart.style.left = (Math.random() * 97)+"vw";
+        heart.style.animationDuration = (Math.random()*3)+2+"s"
+        body.appendChild(heart);
+    }
+    setInterval(createHeart,200);
+    setInterval(function name(params) {
+        var heartArr = document.querySelectorAll(".fa-heart")
+        if (heartArr.length > 200) {
+        heartArr[0].remove()
+        }
+        //console.log(heartArr);
+    },200)
+
+</script>
+
+</html>
